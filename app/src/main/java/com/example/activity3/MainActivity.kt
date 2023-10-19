@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
             Activity3Theme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
+                    HomeScreen(judul = "Thariq Azhar")
                 }
             }
         }
@@ -46,7 +46,7 @@ fun HomeScreen(judul:String) {
             .padding(20.dp)
             .fillMaxSize()) {
         Text(
-            text = "Thariq Azhar",
+            text = judul,
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier
@@ -163,13 +163,12 @@ fun Detail() {
                 .fillMaxSize(),
             contentAlignment = Alignment.Center) {
             Row(
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                modifier = Modifier
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.fillMaxWidth().padding(25.dp)
                     .fillMaxWidth()) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier
-                        .padding(3.dp)) {
+                    modifier = Modifier) {
                     Text(
                         text = "Humidity")
                     Text(
@@ -177,7 +176,7 @@ fun Detail() {
                         fontWeight = FontWeight.Bold,
                         fontSize = 25.sp)
 
-                    Spacer(modifier = Modifier.padding(30.dp))
+                    Spacer(modifier = Modifier.padding(15.dp))
 
                     Text(
                         text = "Sunrise")
@@ -198,7 +197,7 @@ fun Detail() {
                         fontWeight = FontWeight.Bold,
                         fontSize = 25.sp)
 
-                    Spacer(modifier = Modifier.padding(30.dp))
+                    Spacer(modifier = Modifier.padding(15.dp))
 
                     Text(
                         text = "Sunset")
@@ -212,15 +211,10 @@ fun Detail() {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     Activity3Theme {
-        HomeScreen(judul = "WeatherApp")
+        HomeScreen(judul = "Thariq Azhar")
     }
 }
